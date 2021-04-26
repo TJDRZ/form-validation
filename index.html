@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <form>
+            <label for="email" class="required">E-mail:</label>
+            <input 
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Please enter your e-mail"
+                required
+            >
+            <hr/>
+            <label for="country" class="required">Country:</label>
+            <input
+                id="country"
+                name="country"
+                type="text"
+                placeholder="Please enter your country"
+                required
+            >
+            <hr/>
+            <label for="zip" class="required">Zip code:</label>
+            <input
+                id="zip"
+                name="zip"
+                type="text"
+                placeholder="Please enter your zip code"
+                pattern="^\d{5}$"
+                required
+            >
+            <hr/>
+            <label for="set-pw" class="required">Password:</label>
+            <input
+            id="set-pw"
+            name="set-pw"
+            type="password"
+            minlength="8"
+            maxlength="20"
+            pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+            required
+            >
+            <label for="set-pw" class="pw-rules">8-20 chars length</label>
+            <label for="set-pw" class="pw-rules">Must contain at least 1 number</label>
+            <label for="set-pw" class="pw-rules">Must contain at least 1 special char (!@#$%^&*)</label>
+            <label for="set-pw" class="pw-rules">Must contain at least 1 uppercase and at least 1 lowercase</label>
+            <hr/>
+            <label for="confirm-pw" class="required">Confirm password:</label>
+            <input
+            id="confirm-pw"
+            name="confirm-pw"
+            type="password"
+            required
+            >
+            <button id="submit" type="submit">Submit</button>
+        </form>
+        <script src="index.js"></script>
+    </body>
+</html>
